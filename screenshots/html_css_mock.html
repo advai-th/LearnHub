@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    padding: 24px;
+    width: 1280px;
+    height: 750px;
+    overflow: hidden;
+  }
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #30363d;
+    margin-bottom: 18px;
+  }
+  .title-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .tech-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #e44d26, #264de4);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 13px;
+    color: white;
+  }
+  .title-text h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f0f6fc;
+  }
+  .title-text p {
+    font-size: 12px;
+    color: #8b949e;
+  }
+  .status-badges {
+    display: flex;
+    gap: 8px;
+  }
+  .badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge-html { background: rgba(228, 77, 38, 0.2); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.3); }
+  .badge-css { background: rgba(38, 77, 228, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+  .badge-responsive { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    height: calc(100% - 66px);
+  }
+
+  .panel {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .panel-header {
+    background: #21262d;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #30363d;
+    font-size: 13px;
+    font-weight: 600;
+    color: #c9d1d9;
+  }
+  .panel-body {
+    padding: 14px 16px;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .code-view {
+    background: #0d1117;
+    border-radius: 6px;
+    padding: 14px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #c9d1d9;
+    flex: 1;
+    overflow: hidden;
+    white-space: pre;
+  }
+  .tag { color: #7ee787; font-weight: 600; }
+  .attr { color: #79c0ff; }
+  .val { color: #a5d6ff; }
+  .prop { color: #79c0ff; }
+  .unit { color: #f2cc60; }
+  .sel { color: #ffa657; font-weight: 600; }
+  .com { color: #8b949e; font-style: italic; }
+
+  .highlight-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .hl-card {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+  .hl-title { font-weight: 600; color: #f0f6fc; margin-bottom: 2px; }
+  .hl-desc { color: #8b949e; font-size: 10.5px; }
+</style>
+</head>
+<body>
+
+<div class="header-bar">
+  <div class="title-group">
+    <div class="tech-icon">&lt;/&gt;</div>
+    <div class="title-text">
+      <h1>Frontend Architecture: HTML5 &amp; CSS3 Code Highlights</h1>
+      <p>Semantic Element Hierarchy &bull; Modern Responsive Flexbox/Grid &bull; Component Design</p>
+    </div>
+  </div>
+  <div class="status-badges">
+    <span class="badge badge-html">HTML5 Semantic</span>
+    <span class="badge badge-css">CSS3 Design System</span>
+    <span class="badge badge-responsive">Responsive Layout</span>
+  </div>
+</div>
+
+<div class="content-grid">
+  <!-- Left Panel: Semantic HTML -->
+  <div class="panel">
+    <div class="panel-header">
+      <span>Semantic Structure (Course Card Component)</span>
+      <span style="font-size: 11px; color: #f97316;">index.html &bull; courses.php</span>
+    </div>
+    <div class="panel-body">
+      <div class="code-view">
+<span class="com">&lt;!-- Semantic Course Card Architecture --&gt;</span>
+<span class="tag">&lt;article</span> <span class="attr">class</span>=<span class="val">"course-card"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-badge-wrap"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="val">"badge badge-web"</span><span class="tag">&gt;</span>Web Dev<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="val">"level-pill"</span><span class="tag">&gt;</span>Beginner<span class="tag">&lt;/span&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+
+  <span class="tag">&lt;h3</span> <span class="attr">class</span>=<span class="val">"course-title"</span><span class="tag">&gt;</span>Modern Web Development<span class="tag">&lt;/h3&gt;</span>
+  <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"course-desc"</span><span class="tag">&gt;</span>
+    Master HTML5 semantic layouts and CSS styling.
+  <span class="tag">&lt;/p&gt;</span>
+
+  <span class="tag">&lt;footer</span> <span class="attr">class</span>=<span class="val">"card-footer"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="val">"lesson-meta"</span><span class="tag">&gt;</span>6 Lessons<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"course_view.php?id=1"</span> <span class="attr">class</span>=<span class="val">"btn-primary"</span><span class="tag">&gt;</span>
+      View Course &rarr;
+    <span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;/footer&gt;</span>
+<span class="tag">&lt;/article&gt;</span>
+      </div>
+
+      <div class="highlight-cards">
+        <div class="hl-card">
+          <div class="hl-title">Semantic &lt;article&gt;</div>
+          <div class="hl-desc">Self-contained modular cards for accessible screen reader navigation.</div>
+        </div>
+        <div class="hl-card">
+          <div class="hl-title">Structured Metadata</div>
+          <div class="hl-desc">Badge wrappers and footer tags separate metadata from action buttons.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel: Modern CSS -->
+  <div class="panel">
+    <div class="panel-header">
+      <span>Modular CSS3 Rules (styles.css)</span>
+      <span style="font-size: 11px; color: #38bdf8;">Flexbox &amp; Hover Effects</span>
+    </div>
+    <div class="panel-body">
+      <div class="code-view">
+<span class="com">/* Component Design &amp; Interactive Transitions */</span>
+<span class="sel">.course-card</span> {
+  <span class="prop">background</span>: <span class="val">#ffffff</span>;
+  <span class="prop">border</span>: <span class="unit">1px</span> <span class="val">solid #e5e7eb</span>;
+  <span class="prop">border-radius</span>: <span class="unit">12px</span>;
+  <span class="prop">padding</span>: <span class="unit">24px</span>;
+  <span class="prop">display</span>: <span class="val">flex</span>;
+  <span class="prop">flex-direction</span>: <span class="val">column</span>;
+  <span class="prop">transition</span>: <span class="val">transform 0.25s ease, box-shadow 0.25s ease</span>;
+}
+
+<span class="sel">.course-card:hover</span> {
+  <span class="prop">transform</span>: <span class="val">translateY(-4px)</span>;
+  <span class="prop">box-shadow</span>: <span class="unit">0 12px 24px</span> <span class="val">rgba(0, 0, 0, 0.08)</span>;
+  <span class="prop">border-color</span>: <span class="val">#3b82f6</span>;
+}
+
+<span class="sel">.progress-bar-fill</span> {
+  <span class="prop">height</span>: <span class="unit">8px</span>;
+  <span class="prop">background</span>: <span class="val">linear-gradient(90deg, #2563eb, #60a5fa)</span>;
+  <span class="prop">border-radius</span>: <span class="unit">999px</span>;
+  <span class="prop">transition</span>: <span class="val">width 0.4s ease-in-out</span>;
+}
+      </div>
+
+      <div class="highlight-cards">
+        <div class="hl-card">
+          <div class="hl-title">Micro-Interactions</div>
+          <div class="hl-desc">Subtle elevation on hover with smooth 0.25s transitions.</div>
+        </div>
+        <div class="hl-card">
+          <div class="hl-title">Dynamic Progress Bars</div>
+          <div class="hl-desc">Gradient fills linked to real-time completion percentages.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

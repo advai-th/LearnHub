@@ -99,7 +99,7 @@ require_once __DIR__ . '/header.php';
             <?php foreach ($enrolledCourses as $course): ?>
                 <div class="progress-card">
                     <div class="progress-course">
-                        <div class="course-icon"><?= htmlspecialchars($course['badge_tag'] ?: 'CR') ?></div>
+                        <div class="course-icon"></div>
                         <div>
                             <span><?= htmlspecialchars($course['category']) ?></span>
                             <h3><?= htmlspecialchars($course['title']) ?></h3>

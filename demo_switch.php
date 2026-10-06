@@ -17,11 +17,8 @@ if ($user) {
     $_SESSION['user_role'] = $user['role'];
     $_SESSION['flash_success'] = "Logged in as " . $user['name'] . " (" . ucfirst($user['role']) . ").";
 
-    if ($user['role'] === 'instructor') {
-        header('Location: instructor_dashboard.php');
-    } else {
-        header('Location: progress.php');
-    }
+    $redirect = !empty($_GET['redirect']) ? $_GET['redirect'] : ($user['role'] === 'instructor' ? 'instructor_dashboard.php' : 'progress.php');
+    header('Location: ' . $redirect);
     exit;
 }
 
